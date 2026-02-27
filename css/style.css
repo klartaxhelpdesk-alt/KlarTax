@@ -1,1 +1,220 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0b3c5d;
+    color: white;
+    scroll-behavior: smooth;
+}
 
+/* HEADER */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background: #072f4a;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-text h2 {
+    margin: 0 0 0 10px;
+}
+
+.logo-text span {
+    font-size: 12px;
+    color: #cfe9ff;
+    margin-left: 10px;
+}
+
+.search-box input {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+}
+
+nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* HERO */
+.hero {
+    height: 250px;
+    background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero-overlay {
+    background: rgba(7, 47, 74, 0.55);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* MAIN LAYOUT */
+.home-layout {
+    display: flex;
+    max-width: 1200px;
+    margin: 50px auto;
+    gap: 20px;
+}
+
+/* LEFT SIDE */
+.left-articles {
+    width: 33%;
+    margin-left: -25px;
+}
+
+/* BLUE ARTICLE BOX */
+.articles-box {
+    background: #1f6f8b;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* ARTICLE LIST */
+.articles-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.articles-box li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    cursor: pointer;
+}
+
+.articles-box li:hover {
+    color: #00bfff;
+}
+
+/* Divider */
+.divider {
+    width: 2px;
+    background: rgba(255,255,255,0.3);
+}
+
+/* RIGHT SIDE */
+.right-boxes {
+    width: 67%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* CATEGORY BOX WITH IMAGE + CLICK FIX */
+.category-box {
+    position: relative;
+    background: white;
+    color: white;
+    padding: 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.category-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+}
+
+/* IMAGE LAYER */
+.category-box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* DARK OVERLAY */
+.category-box::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(7, 47, 74, 0.65);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* TEXT ABOVE IMAGE */
+.category-box h3 {
+    position: relative;
+    z-index: 3;
+}
+
+/* Individual Images */
+.right-boxes .category-box:nth-child(1)::before {
+    background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3');
+}
+
+.right-boxes .category-box:nth-child(2)::before {
+    background-image: url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c');
+}
+
+.right-boxes .category-box:nth-child(3)::before {
+    background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40');
+}
+
+.right-boxes .category-box:nth-child(4)::before {
+    background-image: url('https://images.unsplash.com/photo-1526304640581-d334cdbbf45e');
+}
+
+.right-boxes .category-box:nth-child(5)::before {
+    background-image: url('https://images.unsplash.com/photo-1508385082359-f38ae991e8f3');
+}
+
+.right-boxes .category-box:nth-child(6)::before {
+    background-image: url('https://images.unsplash.com/photo-1581091870627-3f6e3b8e1d20');
+}
+
+/* AD SPACE */
+.ad-box {
+    margin-top: 20px;
+    background: #072f4a;
+    padding: 20px;
+    border: 1px dashed white;
+    text-align: center;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 30px;
+    background: #072f4a;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+    .home-layout {
+        flex-direction: column;
+    }
+
+    .left-articles,
+    .right-boxes {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .divider {
+        display: none;
+    }
+
+    .right-boxes {
+        grid-template-columns: 1fr;
+    }
+}
